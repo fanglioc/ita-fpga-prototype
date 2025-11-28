@@ -84,10 +84,10 @@ python3 sim/economic.py
 - **LUT Reduction:** 1.81× per MAC unit (measured)
 
 ### Analytical Projections (ASIC)
-- **Gate Count Reduction:** 4.85× per MAC unit
-- **Energy Efficiency:** 50× improvement vs INT8 GPU
+- **Gate Count Reduction:** 4.85× (theoretical) / 1.62× (system-level conservative)
+- **Energy Efficiency:** 50× (device) / 10-15× (system-level including host CPU)
 - **Die Area (28nm):** 520 mm² (TinyLlama-1.1B), 3,680 mm² (Llama-2-7B)
-- **Manufacturing Cost:** $52-77 (1.1B), $165 (7B) at 10K volume
+- **Manufacturing Cost:** $52-165 at 100K+ volume (higher at low volume due to NRE)
 
 ## Reproducibility
 

@@ -51,17 +51,21 @@ for w in weights:
 
 # 3. The Result
 savings = generic_cost_total / hardwired_cost_total
+conservative_factor = 3.0 # Reviewer suggested 2-3x overhead
+conservative_savings = savings / conservative_factor
 
 print(f"--- SIMULATION RESULTS (Llama-2 Layer Mockup) ---")
 print(f"Total Generic Gates (GPU/TPU):   {generic_cost_total:,}")
 print(f"Total Hardwired Gates (Your IP): {hardwired_cost_total:,}")
-print(f"EFFICIENCY FACTOR: {savings:.2f}x FEWER TRANSISTORS")
+print(f"Optimistic Efficiency: {savings:.2f}x reduction")
+print(f"Conservative Efficiency (3x overhead): {conservative_savings:.2f}x reduction")
 
 # 4. Visualization for the Paper
-labels = ['Generic GPU Core', 'Immutable Tensor Core']
-values = [generic_cost_total, hardwired_cost_total]
+labels = ['Generic GPU', 'ITA (Optimistic)', 'ITA (Conservative)']
+values = [generic_cost_total, hardwired_cost_total, hardwired_cost_total * conservative_factor]
 
-plt.bar(labels, values, color=['gray', 'firebrick'])
+plt.bar(labels, values, color=['gray', 'firebrick', 'darkred'])
 plt.ylabel('Logic Gate Count (Lower is Better)')
-plt.title('The Silicon Cost of Knowledge: Programmable vs. Hardwired')
-plt.show()
+plt.title('Silicon Area: Theory vs. Reality')
+plt.savefig('wp1_gate_count.png')
+# plt.show()
