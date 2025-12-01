@@ -103,11 +103,14 @@ All results in the paper can be reproduced with:
 If you use this work, please cite:
 
 ```bibtex
-@inproceedings{ita2025,
-  title={The Immutable Tensor Architecture: A Pure Dataflow Approach for Secure, Energy-Efficient AI Inference},
-  author={[Author Name]},
-  booktitle={[Conference Name]},
-  year={2025}
+@misc{li2025immutabletensorarchitecturepure,
+      title={The Immutable Tensor Architecture: A Pure Dataflow Approach for Secure, Energy-Efficient AI Inference}, 
+      author={Fang Li},
+      year={2025},
+      eprint={2511.22889},
+      archivePrefix={arXiv},
+      primaryClass={cs.AR},
+      url={https://arxiv.org/abs/2511.22889}, 
 }
 ```
 
@@ -121,7 +124,7 @@ This work was conducted without external funding at a teaching-focused instituti
 
 ## Contact
 
-For questions or collaboration opportunities, please contact: [your email]
+For questions or collaboration opportunities, please contact: fang.li@oc.edu
 
 ## Future Work
 
